@@ -26,3 +26,20 @@ FROM `EMP`;
 -- 1.5 열에 의미 있는 이름 지정하기
 SELECT `SAL` AS SALARY, `COMM` AS COMMISSION
 FROM `EMP`;
+
+-- 1.6 WHERE 절에서 별칭이 지정된 열 참조하기
+-- FROM 절은 WHERE 보다 먼저 평가된다.
+SELECT *
+FROM (
+    SELECT SAL AS SALARY,
+    COMM AS COMMISSION
+    FROM `EMP`
+) X
+WHERE SALARY < 5000;
+
+-- 1.7 열 값 이어 붙이기
+SELECT CONCAT(`ENAME`, ' WORKS AS A ', `JOB`) AS MSG
+FROM `EMP`
+WHERE `DEPTNO`=10;
+
+
