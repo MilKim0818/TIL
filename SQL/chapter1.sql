@@ -42,4 +42,7 @@ SELECT CONCAT(`ENAME`, ' WORKS AS A ', `JOB`) AS MSG
 FROM `EMP`
 WHERE `DEPTNO`=10;
 
+-- 1.8 SELECT 문에서 조건식 사용하기
+
+
 
