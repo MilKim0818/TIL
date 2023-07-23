@@ -51,4 +51,14 @@ SELECT `ENAME`, `SAL`
 END AS STATUS
 FROM `EMP`;
 
+-- 1.9 반환되는 행 수 제한하기
+SELECT *
+FROM `EMP`
+LIMIT 5;
+
+-- 1.10 테이블에서 n개의 무작위 레코드 반환하기
+SELECT `ENAME`, `JOB`
+FROM `EMP`
+ORDER BY RAND()
+LIMIT 5;
 
