@@ -79,3 +79,10 @@ SELECT CASE
     END
 FROM `EMP`;
 
+-- 1.13 패턴 탐색하기
+-- LIKE, %연산자  
+SELECT `ENAME`, `JOB`
+FROM `EMP`
+WHERE `DEPTNO` IN (10, 20)
+AND (`ENAME` LIKE '%I%' OR `JOB` LIKE '%ER');
+
