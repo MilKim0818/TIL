@@ -62,3 +62,20 @@ FROM `EMP`
 ORDER BY RAND()
 LIMIT 5;
 
+-- 1.11 null 값 찾기
+-- = 또는 != 사용할 수 없음 (is null, is not null 사용)
+SELECT *
+FROM `EMP`
+WHERE `COMM` IS NULL;
+
+-- 1.12 null을 실제값으로 변환하기
+-- COALESCE() 하나 이상의 값을 인수로 사용, 목록에서 첫번째 null이 아닌 값을 반환, null이 아닐 때마다 반환 그렇지 않으면 0이 반환되도록 작성
+SELECT COALESCE(`COMM`, 0)
+FROM `EMP`;
+
+SELECT CASE
+    WHEN `COMM` IS NOT NULL THEN `COMM`
+    ELSE 0
+    END
+FROM `EMP`;
+
